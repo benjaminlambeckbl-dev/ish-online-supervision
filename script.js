@@ -51,7 +51,7 @@ document.querySelector('.register__form')?.addEventListener('submit', async e =>
     });
 
     if (res.ok) {
-      btn.textContent = 'Nachricht gesendet ✓';
+      btn.textContent = '✓ Wir melden uns in Kürze – danke für Ihr Interesse!';
       btn.style.background = '#00364a';
       form.reset();
       const labelEl = document.getElementById('buchung-selected-label') || document.getElementById('sv-buchung-label');
@@ -60,7 +60,7 @@ document.querySelector('.register__form')?.addEventListener('submit', async e =>
         btn.textContent = originalText;
         btn.disabled = false;
         btn.style.background = '';
-      }, 5000);
+      }, 7000);
     } else {
       throw new Error('Fehler beim Senden');
     }

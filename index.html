@@ -32,28 +32,89 @@
 
     /* ── Fragen section ──────────────────────────────── */
     .fragen-section {
-      padding: 4rem 0 3.5rem;
-      background: #fff;
+      padding: 5rem 0 4.5rem;
+      background: linear-gradient(180deg, #fff 0%, #eef5f8 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .fragen-section::before {
+      content: "?";
+      position: absolute;
+      right: -4rem; top: -6rem;
+      font-family: var(--font-head);
+      font-size: 28rem;
+      font-weight: 900;
+      color: rgba(0,170,162,.045);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
     }
     .fragen-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
-      margin-top: 2.5rem;
+      margin-top: 3rem;
+      position: relative;
+      z-index: 1;
     }
     @media (max-width: 640px) { .fragen-grid { grid-template-columns: 1fr; } }
     .frage-card {
-      background: #f4f8fa;
-      border-radius: 14px;
-      padding: 1.5rem;
-      border-left: 3px solid var(--ish-teal);
+      position: relative;
+      background: #fff;
+      border-radius: 18px;
+      padding: 1.75rem 1.75rem 2rem;
+      border: 1px solid #e3eaf0;
+      box-shadow: 0 2px 12px rgba(0,60,90,.05);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .frage-card::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--ish-teal);
+      transform: scaleY(.35);
+      transform-origin: top;
+      transition: transform .35s;
+    }
+    .frage-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(0,80,110,.12);
+      border-color: rgba(0,170,162,.3);
+    }
+    .frage-card:hover::before { transform: scaleY(1); }
+    .frage-card__num {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-size: .66rem; font-weight: 800;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ish-teal);
+      margin-bottom: .65rem;
     }
     .frage-card h3 {
-      font-size: .95rem; font-weight: 700; color: var(--ish-dark);
-      margin: 0 0 .5rem;
+      font-size: 1.02rem; font-weight: 700; color: var(--ish-dark);
+      margin: 0 0 .55rem; line-height: 1.35;
+      position: relative; z-index: 1;
     }
     .frage-card p {
-      font-size: .86rem; color: #5a6e7e; line-height: 1.6; margin: 0;
+      font-size: .87rem; color: #4a5a6a; line-height: 1.65; margin: 0;
+      position: relative; z-index: 1;
+    }
+    .frage-card__mark {
+      position: absolute;
+      right: .75rem; bottom: -1.25rem;
+      font-family: var(--font-head);
+      font-size: 6rem; font-weight: 900;
+      color: rgba(0,170,162,.09);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      transition: color .3s, transform .3s;
+    }
+    .frage-card:hover .frage-card__mark {
+      color: rgba(0,170,162,.22);
+      transform: translateY(-.35rem);
     }
 
     /* ── Module section (white bg, like Grundkurs) ───── */
@@ -349,20 +410,28 @@
       </div>
       <div class="fragen-grid">
         <div class="frage-card">
+          <span class="frage-card__num">Frage 01</span>
           <h3>Resonanz im virtuellen Raum</h3>
           <p>Wie kann in Online‑Supervision Resonanz entstehen, obwohl sich die Beteiligten nicht im selben physischen Raum befinden? Welche Formen von Aufmerksamkeit und Präsenz unterstützen eine lebendige Zusammenarbeit?</p>
+          <span class="frage-card__mark" aria-hidden="true">?</span>
         </div>
         <div class="frage-card">
+          <span class="frage-card__num">Frage 02</span>
           <h3>Professionelle Beziehung gestalten</h3>
           <p>Wie verändert sich Beziehungsgestaltung im virtuellen Setting? Welche Möglichkeiten gibt es, Vertrauen und Arbeitsfähigkeit auch über digitale Medien hinweg aufzubauen?</p>
+          <span class="frage-card__mark" aria-hidden="true">?</span>
         </div>
         <div class="frage-card">
+          <span class="frage-card__num">Frage 03</span>
           <h3>Gruppendynamik online wahrnehmen</h3>
           <p>Wie lassen sich Dynamiken in Teams und Gruppen auch im digitalen Raum beobachten, spiegeln und für den Beratungsprozess nutzbar machen?</p>
+          <span class="frage-card__mark" aria-hidden="true">?</span>
         </div>
         <div class="frage-card">
+          <span class="frage-card__num">Frage 04</span>
           <h3>Rahmen und Prozessführung</h3>
           <p>Welche Strukturen und Absprachen unterstützen Orientierung und Arbeitsfähigkeit in der Online‑Supervision?</p>
+          <span class="frage-card__mark" aria-hidden="true">?</span>
         </div>
       </div>
     </div>
