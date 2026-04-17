@@ -54,7 +54,8 @@ document.querySelector('.register__form')?.addEventListener('submit', async e =>
       btn.textContent = 'Nachricht gesendet ✓';
       btn.style.background = '#00364a';
       form.reset();
-      document.getElementById('buchung-selected-label').textContent = '';
+      const labelEl = document.getElementById('buchung-selected-label') || document.getElementById('sv-buchung-label');
+      if (labelEl) labelEl.textContent = '';
       setTimeout(() => {
         btn.textContent = originalText;
         btn.disabled = false;

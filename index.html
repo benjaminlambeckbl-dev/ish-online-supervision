@@ -759,7 +759,7 @@
         <h2>Sichern Sie Ihren Platz.</h2>
         <p>Melden Sie sich direkt für den nächsten Durchgang an – modular oder als Gesamtpaket. Wir bestätigen Ihre Anmeldung innerhalb von 2 Werktagen.</p>
 
-        <form class="register__form" novalidate style="text-align:left;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:2rem;">
+        <form class="register__form" action="https://formspree.io/f/xeevaybd" method="POST" novalidate style="text-align:left;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:2rem;">
           <h3 style="color:#fff;margin:0 0 .25rem;">Anmeldung &amp; Anfrage</h3>
           <p id="sv-buchung-label" style="font-size:.85rem;color:rgba(255,255,255,.5);margin:0 0 1.5rem;min-height:1.2em;"></p>
           <input type="hidden" id="sv-buchung" name="buchung" value="" />
@@ -893,13 +893,6 @@
       });
     });
 
-    // Form submit
-    document.querySelector('.register__form').addEventListener('submit', function(e){
-      e.preventDefault();
-      const btn = this.querySelector('[type=submit]');
-      btn.textContent = '✓ Anmeldung gesendet – wir melden uns bald!';
-      btn.disabled = true;
-    });
   </script>
 </body>
 </html>
