@@ -140,6 +140,27 @@
       font-size: .82rem; color: #7a8f9a; font-style: italic;
       border-left: 2px solid var(--ish-teal); padding-left: .75rem; margin: .75rem 0 0;
     }
+    .referent-card__link {
+      display: inline-block; font-size: .85rem; font-weight: 600;
+      color: var(--ish-teal); text-decoration: none; margin: -.5rem 0 1rem;
+    }
+    .referent-card__link:hover { text-decoration: underline; }
+    .referent-card__refs {
+      margin-top: 1.5rem; padding-top: 1.5rem;
+      border-top: 1px solid #dde6ec;
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .referent-refs-block__label {
+      display: block; font-size: .66rem; font-weight: 800;
+      letter-spacing: .09em; text-transform: uppercase;
+      color: var(--ish-teal); margin-bottom: .5rem;
+    }
+    .referent-refs-block__chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .ref-chip {
+      font-size: .76rem; color: var(--ish-dark); background: #fff;
+      border: 1px solid #dde6ec; padding: .3rem .7rem;
+      border-radius: 999px; white-space: nowrap;
+    }
 
     /* ── Anmeldung / Interest ─────────────────────────── */
     .interest-section {
@@ -677,6 +698,7 @@
         <div class="referent-card__info">
           <h3 class="referent-card__name">Benjamin Lambeck</h3>
           <span class="referent-card__role">Referent · ISH Akademie</span>
+          <a href="https://lambeck-consulting.de/" target="_blank" rel="noopener" class="referent-card__link">lambeck-consulting.de →</a>
           <p class="referent-card__bio">
             KI‑Experte in KMUs, Ideengeber und Geschäftsführer von coachingspace. Als Lehrender der früheren Zusatzqualifizierung Online‑Supervision hat er über mehrere Jahre Supervisor:innen und Coaches in der Gestaltung digitaler Beratungsprozesse begleitet.
           </p>
@@ -686,6 +708,44 @@
           <p class="referent-card__note">
             Alle Module können bei coachingspace für die Qualifizierung „Systemische:r Online‑Expert:in" anerkannt werden.
           </p>
+
+          <div class="referent-card__refs">
+            <div class="referent-refs-block">
+              <span class="referent-refs-block__label">Lehrend &amp; zertifiziert</span>
+              <div class="referent-refs-block__chips">
+                <span class="ref-chip">Systemische Gesellschaft (SG)</span>
+                <span class="ref-chip">DGSF</span>
+                <span class="ref-chip">INQA-Coach 2026</span>
+                <span class="ref-chip">DGOB Online-Beratung</span>
+              </div>
+            </div>
+            <div class="referent-refs-block">
+              <span class="referent-refs-block__label">Auszeichnungen</span>
+              <div class="referent-refs-block__chips">
+                <span class="ref-chip">European Training Award (Gold)</span>
+                <span class="ref-chip">HR Excellence Award</span>
+                <span class="ref-chip">dvct Award</span>
+                <span class="ref-chip">SG-Sonderpreis</span>
+                <span class="ref-chip">Bergischer Zukunftspreis 2022</span>
+              </div>
+            </div>
+            <div class="referent-refs-block">
+              <span class="referent-refs-block__label">Gründungen</span>
+              <div class="referent-refs-block__chips">
+                <span class="ref-chip">coachingspace GmbH</span>
+                <span class="ref-chip">Institut für Schulentwicklung und Hochschuldidaktik (ISH)</span>
+              </div>
+            </div>
+            <div class="referent-refs-block">
+              <span class="referent-refs-block__label">Medien &amp; Verlag</span>
+              <div class="referent-refs-block__chips">
+                <span class="ref-chip">COACHINGBANDE Podcast</span>
+                <span class="ref-chip">managerSeminare</span>
+                <span class="ref-chip">Zukunft Personal Europe</span>
+                <span class="ref-chip">Beltz Verlag</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
