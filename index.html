@@ -238,6 +238,66 @@
     .interest-section .register__form label { color: rgba(255,255,255,.85); }
     .interest-section .register__form .form-group--check label { color: rgba(255,255,255,.7); }
 
+    /* ── Termin-CTA (Call-before-form) ────────────────── */
+    .termin-cta {
+      max-width: 680px; margin: 0 auto 2rem;
+      background: rgba(0,170,162,.1);
+      border: 1.5px solid rgba(0,170,162,.35);
+      border-radius: 18px;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-align: left;
+    }
+    .termin-cta__icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--ish-teal); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .termin-cta__text { flex: 1; }
+    .termin-cta__text strong {
+      display: block; color: #fff; font-size: .98rem; margin-bottom: .15rem;
+    }
+    .termin-cta__text span {
+      display: block; color: rgba(255,255,255,.7); font-size: .85rem; line-height: 1.5;
+    }
+    .termin-cta__btn {
+      flex-shrink: 0;
+      background: #fff; color: var(--ish-dark);
+      font-weight: 700; font-size: .88rem;
+      padding: .7rem 1.2rem; border-radius: 999px;
+      text-decoration: none; white-space: nowrap;
+      transition: background .2s, transform .2s;
+    }
+    .termin-cta__btn:hover { background: var(--ish-teal); color: #fff; transform: translateY(-1px); }
+    @media (max-width: 640px) {
+      .termin-cta { flex-direction: column; text-align: center; }
+      .termin-cta__text { text-align: center; }
+    }
+
+    /* ── Form Button-Row ──────────────────────────────── */
+    .form-cta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 560px) {
+      .form-cta-row { grid-template-columns: 1fr; }
+    }
+    .form-cta-row .btn { width: 100%; justify-content: center; }
+    .form-cta-row .btn--ghost {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,.3);
+    }
+    .form-cta-row .btn--ghost:hover {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.5);
+    }
+
     /* ── Coachingspace note ───────────────────────────── */
     .coachingspace-note {
       background: rgba(0,170,162,.08);
@@ -325,6 +385,135 @@
     .sv-buchung-card p { font-size: .85rem; color: #5a6e7e; line-height: 1.55; margin: 0; flex: 1; }
     .sv-buchung-card__price { font-family: var(--font-head); font-size: 1.8rem; font-weight: 900; color: var(--ish-dark); line-height: 1; }
     .sv-buchung-card__price span { font-size: .78rem; font-weight: 400; color: #8a9aaa; }
+    .sv-buchung-card__strike { font-size: .82rem; color: #a0aab4; text-decoration: line-through; margin-right: .4rem; font-weight: 400; }
+    .sv-buchung-card__save { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .04em; color: #fff; background: var(--ish-teal); padding: .25rem .6rem; border-radius: 999px; margin-top: .35rem; }
+
+    @media (max-width: 640px) { .vertiefung-grid { grid-template-columns: 1fr !important; } }
+
+    /* ── Rahmen-Block (Für wen geeignet / Voraussetzungen) ── */
+    .rahmen-section { padding: 4rem 0 3rem; background: #fff; }
+    .rahmen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+    @media (max-width: 900px) { .rahmen-grid { grid-template-columns: 1fr; } }
+    .rahmen-card { background: #f4f8fa; border: 1px solid #e3eaf0; border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; gap: .65rem; }
+    .rahmen-card__icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(0,170,162,.12); color: var(--ish-teal); display: flex; align-items: center; justify-content: center; margin-bottom: .35rem; }
+    .rahmen-card__siegel { width: 130px; height: 130px; object-fit: contain; margin: -.25rem auto .5rem; display: block; }
+    .rahmen-card--siegel { text-align: center; background: #fff; border: 1.5px solid var(--ish-teal); box-shadow: 0 4px 20px rgba(0,170,162,.1); }
+    .rahmen-card--siegel ul { align-self: stretch; }
+    .rahmen-card__label { font-size: .68rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: var(--ish-teal); }
+    .rahmen-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--ish-dark); margin: 0; line-height: 1.35; }
+    .rahmen-card p { font-size: .88rem; color: #4a5a6a; line-height: 1.6; margin: 0; }
+    .rahmen-card ul { list-style: none; padding: 0; margin: .2rem 0 0; display: flex; flex-direction: column; gap: .4rem; }
+    .rahmen-card ul li { font-size: .85rem; color: #4a5a6a; line-height: 1.55; display: flex; align-items: flex-start; gap: .5rem; }
+    .rahmen-card ul li::before { content: '✓'; color: var(--ish-teal); font-weight: 700; flex-shrink: 0; }
+
+    /* ── Gestaltungsdimensionen ───────────────────────── */
+    .dim-section {
+      padding: 5rem 0 4.5rem;
+      background: linear-gradient(180deg, #0a2a3a 0%, #0e3a4f 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .dim-section::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 15% 20%, rgba(0,170,162,.15), transparent 45%), radial-gradient(circle at 85% 80%, rgba(0,170,162,.08), transparent 40%);
+      pointer-events: none;
+    }
+    .dim-section .section-header h2 { color: #fff; }
+    .dim-section .section-tag { color: var(--ish-teal); }
+    .dim-section .section-intro { color: rgba(255,255,255,.72); }
+    .dim-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+      position: relative; z-index: 1;
+    }
+    @media (max-width: 900px) { .dim-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .dim-grid { grid-template-columns: 1fr; } }
+    .dim-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px;
+      padding: 1.5rem 1.5rem 1.65rem;
+      backdrop-filter: blur(4px);
+      transition: border-color .25s, transform .25s, background .25s;
+      position: relative;
+    }
+    .dim-card:hover {
+      border-color: rgba(0,170,162,.5);
+      transform: translateY(-3px);
+      background: rgba(255,255,255,.06);
+    }
+    .dim-card__num {
+      font-family: var(--font-head);
+      font-size: .7rem; font-weight: 800;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ish-teal);
+      display: block; margin-bottom: .75rem;
+    }
+    .dim-card h3 {
+      font-family: var(--font-head);
+      font-size: 1.1rem; font-weight: 700;
+      color: #fff; margin: 0 0 .6rem;
+      line-height: 1.3;
+    }
+    .dim-card p {
+      font-size: .86rem; color: rgba(255,255,255,.72);
+      line-height: 1.6; margin: 0;
+    }
+    .dim-klammer {
+      margin-top: 2rem;
+      background: rgba(0,170,162,.12);
+      border: 1px solid rgba(0,170,162,.35);
+      border-radius: 16px;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      position: relative; z-index: 1;
+    }
+    .dim-klammer__icon { color: var(--ish-teal); flex-shrink: 0; margin-top: .2rem; }
+    .dim-klammer h3 { font-size: .95rem; color: #fff; margin: 0 0 .35rem; font-weight: 700; }
+    .dim-klammer p { font-size: .87rem; color: rgba(255,255,255,.78); line-height: 1.6; margin: 0; }
+    .dim-quote {
+      margin-top: 2rem;
+      font-family: var(--font-head);
+      font-size: 1.05rem; font-style: italic;
+      color: rgba(255,255,255,.85);
+      border-left: 3px solid var(--ish-teal);
+      padding: .35rem 0 .35rem 1.25rem;
+      max-width: 720px;
+      position: relative; z-index: 1;
+    }
+    .dim-quote cite {
+      display: block;
+      font-family: var(--font-body);
+      font-size: .78rem; font-style: normal;
+      color: rgba(255,255,255,.55);
+      margin-top: .5rem;
+    }
+
+    /* ── Datenschutz-Hinweis (KI-Modul) ───────────────── */
+    .modul-hinweis {
+      margin-top: 1rem;
+      background: rgba(0,170,162,.06);
+      border-left: 3px solid var(--ish-teal);
+      border-radius: 0 10px 10px 0;
+      padding: .9rem 1.1rem;
+      font-size: .82rem; color: #3a5a5a;
+      line-height: 1.55;
+    }
+    .modul-hinweis strong { color: var(--ish-dark); }
+
+    /* ── Wissenschaftlicher Kontext ───────────────────── */
+    .lit-section { padding: 3.5rem 0 3rem; background: var(--ish-gray-50); }
+    .lit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2rem; max-width: 960px; margin-left: auto; margin-right: auto; }
+    @media (max-width: 700px) { .lit-grid { grid-template-columns: 1fr; } }
+    .lit-item { background: #fff; border: 1px solid #e3eaf0; border-radius: 12px; padding: 1.1rem 1.25rem; font-size: .84rem; color: #4a5a6a; line-height: 1.55; }
+    .lit-item strong { color: var(--ish-dark); font-weight: 700; }
+    .lit-note { margin-top: 2rem; text-align: center; font-size: .82rem; color: #7a8fa0; font-style: italic; max-width: 640px; margin-left: auto; margin-right: auto; }
   </style>
 </head>
 <body>
@@ -335,6 +524,7 @@
       <a href="#" class="nav__logo" aria-label="ISH Akademie"></a>
       <nav class="nav__links" aria-label="Seitennavigation" style="margin-left:auto;margin-right:auto;">
         <a href="#fragen">Zentrale Fragen</a>
+        <a href="#dimensionen">Gestaltungsdimensionen</a>
         <a href="#module">Module</a>
         <a href="#preise">Preise</a>
         <a href="#referent">Dozent</a>
@@ -356,6 +546,7 @@
       <div class="hero__content">
         <div class="hero__badges">
           <span class="badge badge--akademie">ISH Akademie</span>
+          <span class="badge badge--outline">Aufbauende Qualifizierung</span>
           <span class="badge badge--outline">4 Module · Online</span>
           <span class="badge badge--outline">Steuerbefreit</span>
         </div>
@@ -364,7 +555,7 @@
           <span class="text-teal">Online-Supervision.</span>
         </h1>
         <p class="hero__sub">
-          Virtuelle Beratungsräume sind längst Teil professioneller Supervisionspraxis. Diese Weiterbildung eröffnet einen Reflexions‑ und Lernraum für Supervisor:innen, Coaches und Beratende, die ihre Arbeit im digitalen Kontext bewusster gestalten möchten.
+          Virtuelle Beratungsräume sind längst Teil professioneller Supervisionspraxis. Diese <strong>aufbauende Qualifizierung</strong> eröffnet einen Reflexions‑ und Lernraum für Supervisor:innen, Coaches und Beratende, die ihre Arbeit im digitalen Kontext bewusster gestalten möchten – auf <strong>systemischer Grundhaltung</strong>, entlang der <strong>sechs Gestaltungsdimensionen</strong>: Selektivität, Raum, Zeit, Beziehung, Verantwortung und Prozess.
         </p>
         <ul class="hero__inline-check">
           <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Vollständig online – Fr 16:30–18:30 · Sa 09:30–17:00</li>
@@ -423,17 +614,159 @@
         </div>
         <div class="frage-card">
           <span class="frage-card__num">Frage 03</span>
-          <h3>Gruppendynamik online wahrnehmen</h3>
-          <p>Wie lassen sich Dynamiken in Teams und Gruppen auch im digitalen Raum beobachten, spiegeln und für den Beratungsprozess nutzbar machen?</p>
+          <h3>Unterschiede im virtuellen Team sichtbar machen</h3>
+          <p>Wie zeigen sich Differenz, Konflikt und Zugehörigkeit in Teams, wenn der gemeinsame physische Raum fehlt? Welche Muster werden im digitalen Setting verstärkt – welche verschwinden?</p>
           <span class="frage-card__mark" aria-hidden="true">?</span>
         </div>
         <div class="frage-card">
           <span class="frage-card__num">Frage 04</span>
-          <h3>Rahmen und Prozessführung</h3>
-          <p>Welche Strukturen und Absprachen unterstützen Orientierung und Arbeitsfähigkeit in der Online‑Supervision?</p>
+          <h3>Rahmen, Kontrakt und Prozessverantwortung</h3>
+          <p>Welche expliziten Vereinbarungen zu Technik, Datenschutz, Präsenz und Umgang mit Störungen braucht es, damit Online‑Supervision zu einem professionell haltenden Raum wird?</p>
           <span class="frage-card__mark" aria-hidden="true">?</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- RAHMEN · FÜR WEN GEEIGNET -->
+  <section class="rahmen-section" id="rahmen">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Rahmen &amp; Zielgruppe</span>
+        <h2>Für wen ist diese Weiterbildung geeignet?</h2>
+        <p class="section-intro">Die Weiterbildung richtet sich an erfahrene Beraterinnen und Berater, die Online‑Supervision als eigenständiges Setting professionell gestalten möchten.</p>
+      </div>
+
+      <div class="rahmen-grid">
+        <div class="rahmen-card">
+          <div class="rahmen-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <span class="rahmen-card__label">Voraussetzungen</span>
+          <h3>Fachliche Grundlage</h3>
+          <p>Abgeschlossene grundständige Coaching‑ oder Supervisionsausbildung oder vergleichbare beraterische Qualifikation.</p>
+          <ul>
+            <li>Erfahrung in Einzel- oder Gruppenberatung</li>
+            <li>Interesse an digitaler Beratungspraxis</li>
+          </ul>
+        </div>
+
+        <div class="rahmen-card">
+          <div class="rahmen-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          </div>
+          <span class="rahmen-card__label">Gruppengröße</span>
+          <h3>Max. 16 Teilnehmende</h3>
+          <p>Kleine Lerngruppe für intensive Reflexion, persönlichen Austausch und ausreichend Raum für eigene Praxisfälle.</p>
+          <ul>
+            <li>Didaktisch betreuter Lernraum</li>
+            <li>Peer‑Reflexion in Kleingruppen</li>
+          </ul>
+        </div>
+
+        <div class="rahmen-card rahmen-card--siegel">
+          <img src="siegel-online-expertin.svg" alt="Siegel Systemische:r Online-Expert:in – zertifiziert von coachingspace" class="rahmen-card__siegel" />
+          <span class="rahmen-card__label">Abschluss · Zertifikat</span>
+          <h3>Systemische:r Online‑Expert:in</h3>
+          <p>Bei vollständigem Besuch aller Module erhalten Sie das Zertifikat <strong>„Systemische:r Online‑Expert:in"</strong> – zertifiziert von coachingspace.</p>
+          <ul>
+            <li>Anerkannt für weiterführende Qualifizierungen</li>
+            <li>Modulweise Teilnahmebestätigung möglich</li>
+          </ul>
+          <p style="font-size:.78rem;color:#6b7d8e;line-height:1.5;margin:.5rem 0 0;padding-top:.75rem;border-top:1px solid #e3eaf0;text-align:left;">
+            <strong style="color:var(--ish-dark);">Auf dem Zertifikat:</strong><br/>
+            80 WE · 4 Module · Benjamin Lambeck als Leitung · Aussteller: coachingspace<br/>
+            Inhaltliche Schwerpunkte entlang der sechs Gestaltungsdimensionen.
+          </p>
+        </div>
+      </div>
+
+      <!-- Freiwillige Vertiefung -->
+      <div style="margin-top:2.5rem;background:#f4f8fa;border-radius:18px;padding:2rem 2.25rem;border:1px solid #e3eaf0;">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="stroke:var(--ish-teal);flex-shrink:0;"><path d="M12 22s-8-4.5-8-11.8a8 8 0 0 1 16 0c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span style="font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ish-teal);">Freiwillige Vertiefung · zwischen den Modulen</span>
+        </div>
+        <h3 style="font-size:1.15rem;font-weight:700;color:var(--ish-dark);margin:0 0 .75rem;">Intervision &amp; Selbstlernen – empfohlen ab zwei gebuchten Modulen</h3>
+        <p style="font-size:.9rem;color:#4a5a6a;line-height:1.65;margin:0 0 1.25rem;">Zwischen den Modulen steht ein multimedialer Lernraum zur Verfügung – auf freiwilliger Basis, als Angebot zur Vertiefung und zum Transfer in die eigene Praxis.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;" class="vertiefung-grid">
+          <div style="background:#fff;border-radius:12px;padding:1.25rem 1.4rem;border:1px solid #e3eaf0;">
+            <div style="display:flex;align-items:baseline;gap:.5rem;margin-bottom:.4rem;">
+              <span style="font-family:var(--font-head);font-size:1.8rem;font-weight:900;color:var(--ish-teal);line-height:1;">35</span>
+              <span style="font-size:.75rem;font-weight:700;color:#8a9aaa;">LE empfohlen</span>
+            </div>
+            <strong style="display:block;font-size:.92rem;color:var(--ish-dark);margin-bottom:.35rem;">Peer‑Intervision</strong>
+            <p style="font-size:.83rem;color:#5a6e7e;line-height:1.55;margin:0;">Kollegiale Fallarbeit in Kleingruppen zwischen den Modulen. Selbstorganisiert, mit Leitfäden aus der Weiterbildung.</p>
+          </div>
+          <div style="background:#fff;border-radius:12px;padding:1.25rem 1.4rem;border:1px solid #e3eaf0;">
+            <div style="display:flex;align-items:baseline;gap:.5rem;margin-bottom:.4rem;">
+              <span style="font-family:var(--font-head);font-size:1.8rem;font-weight:900;color:var(--ish-teal);line-height:1;">~30</span>
+              <span style="font-size:.75rem;font-weight:700;color:#8a9aaa;">LE Selbstlernen</span>
+            </div>
+            <strong style="display:block;font-size:.92rem;color:var(--ish-dark);margin-bottom:.35rem;">Multimediales Material</strong>
+            <p style="font-size:.83rem;color:#5a6e7e;line-height:1.55;margin:0;">Texte, Videos, Impulsfragen und Übungen zur individuellen Vertiefung – eigenständig und im eigenen Tempo bearbeitbar.</p>
+          </div>
+        </div>
+        <p style="font-size:.78rem;color:#7a8fa0;margin:1rem 0 0;font-style:italic;">Hinweis: Dieses Angebot ist freiwillig und wird bei Buchung von zwei oder mehr Modulen bereitgestellt.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECHS GESTALTUNGSDIMENSIONEN -->
+  <section class="dim-section" id="dimensionen">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Didaktisches Fundament</span>
+        <h2>Die sechs Gestaltungsdimensionen.</h2>
+        <p class="section-intro">Online‑Supervision ist kein technisches Hilfsmittel, sondern ein eigenständiges Setting (Schreyögg 2010). Auf Basis einer <strong>systemischen Grundhaltung</strong> strukturieren sechs Gestaltungsdimensionen die Praxis – sie bilden das didaktische Rückgrat der Qualifizierung.</p>
+      </div>
+
+      <div class="dim-grid">
+        <div class="dim-card">
+          <span class="dim-card__num">Dimension 01</span>
+          <h3>Selektivität</h3>
+          <p>Integrative vs. selektive Vermittlung (Daft &amp; Lengel 1986). Welche Informationen gehen im digitalen Kanal verloren – welche neuen entstehen? Kanalreduktion bewusst gestalten.</p>
+        </div>
+        <div class="dim-card">
+          <span class="dim-card__num">Dimension 02</span>
+          <h3>Raum</h3>
+          <p>Drei Räume überlagern sich: der Raum der Supervisor:in, der Raum der Supervisand:innen und der Raum der Informationsvermittlung. Präsenz entsteht in ihrem Zusammenspiel.</p>
+        </div>
+        <div class="dim-card">
+          <span class="dim-card__num">Dimension 03</span>
+          <h3>Zeit</h3>
+          <p>Synchron, zeitversetzt oder blended. Chat, Mail und Audio eröffnen neue Rhythmen der Reflexion – asynchrone Prozesse wollen bewusst gerahmt werden.</p>
+        </div>
+        <div class="dim-card">
+          <span class="dim-card__num">Dimension 04</span>
+          <h3>Beziehungsgestaltung</h3>
+          <p>Sicherheit, Anerkennung und Arbeitsbündnis trotz räumlicher Distanz aufbauen. Resonanz als aktive Gestaltungsleistung im virtuellen Raum (Hawkins &amp; Shohet 2012).</p>
+        </div>
+        <div class="dim-card">
+          <span class="dim-card__num">Dimension 05</span>
+          <h3>Verantwortung</h3>
+          <p>Technische, rechtliche und psychologische Verantwortung reflektieren: Datenschutz, Plattformwahl, Belastungen digitaler Arbeit und die Grenzen des Settings klar benennen.</p>
+        </div>
+        <div class="dim-card">
+          <span class="dim-card__num">Dimension 06</span>
+          <h3>Prozessgestaltung</h3>
+          <p>Blended Supervision: Übergänge zwischen analog und digital bewusst gestalten. Enriched und hybride Settings als erweiterter Möglichkeitsraum.</p>
+        </div>
+      </div>
+
+      <div class="dim-klammer">
+        <svg class="dim-klammer__icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <div>
+          <h3>Kontrakt als verbindende Klammer</h3>
+          <p>Der Kontrakt (14 Bestandteile) rahmt alle sechs Dimensionen. Er schafft Transparenz über Rollen, Technik, Datenschutz, Umgang mit Störungen und vereinbart die gemeinsame Arbeitsweise – die Basis professioneller Online‑Supervision.</p>
+        </div>
+      </div>
+
+      <blockquote class="dim-quote">
+        „Online‑Supervision nicht als technische Lösung, sondern als eigenständigen Begegnungsraum verstehen."
+        <cite>— Leitgedanke der Weiterbildung</cite>
+      </blockquote>
     </div>
   </section>
 
@@ -494,6 +827,10 @@
                     <span class="fmt-label">Umfang</span>
                     <strong>20 Weiterbildungseinheiten</strong>
                   </div>
+                  <div class="mod-panel__format-item">
+                    <span class="fmt-label">Arbeitsform</span>
+                    <strong>Input · Übung · Fallarbeit · Peer‑Reflexion</strong>
+                  </div>
                 </div>
               </div>
             </div>
@@ -546,6 +883,10 @@
                     <span class="fmt-label">Umfang</span>
                     <strong>20 Weiterbildungseinheiten</strong>
                   </div>
+                  <div class="mod-panel__format-item">
+                    <span class="fmt-label">Arbeitsform</span>
+                    <strong>Input · Übung · Fallarbeit · Peer‑Reflexion</strong>
+                  </div>
                 </div>
               </div>
             </div>
@@ -585,6 +926,9 @@
                   <li>Chancen und Grenzen beim professionellen KI-Einsatz</li>
                   <li>Praxisbeispiele: KI vor, während und nach Beratungsprozessen</li>
                 </ul>
+                <div class="modul-hinweis">
+                  <strong>Datenschutz &amp; Ethik:</strong> Die Weiterbildung arbeitet auf <strong>coachingspace</strong> – einer DSGVO‑konformen Plattform auf europäischen Servern mit AV‑Vertrag. Beraterische KI‑Anwendung wird stets im Spannungsfeld von Datenschutz, Schweigepflicht und ethischer Verantwortung reflektiert.
+                </div>
               </div>
               <div class="mod-panel__col">
                 <span class="mod-panel__label">Format &amp; Umfang</span>
@@ -597,6 +941,10 @@
                   <div class="mod-panel__format-item">
                     <span class="fmt-label">Umfang</span>
                     <strong>20 Weiterbildungseinheiten</strong>
+                  </div>
+                  <div class="mod-panel__format-item">
+                    <span class="fmt-label">Arbeitsform</span>
+                    <strong>Input · Übung · Fallarbeit · Peer‑Reflexion</strong>
                   </div>
                 </div>
               </div>
@@ -637,6 +985,9 @@
                   <li>Gestaltung von Übergängen zwischen analoger und digitaler Beratung</li>
                   <li>Abschluss, Transfer in die eigene Praxis und Kurzpräsentationen</li>
                 </ul>
+                <div class="modul-hinweis">
+                  <strong>Optionale Fallarbeit:</strong> Teilnehmende können auf freiwilliger Basis einen eigenen Praxisfall einbringen und im Setting der Online‑Supervision reflektieren – als Transfer‑ und Vertiefungsangebot.
+                </div>
               </div>
               <div class="mod-panel__col">
                 <span class="mod-panel__label">Format &amp; Umfang</span>
@@ -649,6 +1000,10 @@
                   <div class="mod-panel__format-item">
                     <span class="fmt-label">Umfang</span>
                     <strong>20 Weiterbildungseinheiten</strong>
+                  </div>
+                  <div class="mod-panel__format-item">
+                    <span class="fmt-label">Arbeitsform</span>
+                    <strong>Input · Übung · Fallarbeit · Peer‑Reflexion</strong>
                   </div>
                 </div>
               </div>
@@ -736,17 +1091,19 @@
         </div>
 
         <div class="sv-buchung-card sv-buchung-card--highlight">
-          <span class="sv-buchung-card__badge">Gesamtpaket · Vorteilspreis</span>
+          <span class="sv-buchung-card__badge">Gesamtpaket</span>
           <h3>Alle 4 Module</h3>
-          <p>Die vollständige Weiterbildung in einem Paket – alle vier Module, vollständig online. Günstiger als vier Einzelbuchungen.</p>
+          <p>Die vollständige Qualifizierung in einem Paket – alle vier Module, vollständig online. Inklusive Zertifikat zum/zur Systemischen Online‑Expert:in by coachingspace.</p>
           <div class="sv-buchung-card__price">1.900 <span>€ umsatzsteuerbefreit</span></div>
+          <p style="font-size:.82rem;color:#5a6e7e;margin:.35rem 0 0;line-height:1.5;">1.900 € statt 4 × 690 € – <strong style="color:var(--ish-teal);">Modul 4 inklusive.</strong></p>
           <button class="btn btn--primary sv-buchung-card__btn" data-option="Gesamtpaket (alle 4 Module)" style="width:100%;justify-content:center;margin-top:.5rem;">Gesamtpaket buchen</button>
         </div>
 
-        <div class="sv-buchung-card" style="background:#f4f8fa;">
-          <span class="sv-buchung-card__badge">Hinweis</span>
-          <h3>Anerkennung möglich</h3>
-          <p>Alle Module können bei coachingspace für die Qualifizierung „Systemische:r Online-Expert:in" anerkannt werden. Sprechen Sie uns gerne an.</p>
+        <div class="sv-buchung-card" style="background:#f4f8fa;text-align:center;">
+          <img src="siegel-online-expertin.svg" alt="Siegel Systemische:r Online-Expert:in" style="width:110px;height:110px;object-fit:contain;margin:.25rem auto .5rem;" />
+          <span class="sv-buchung-card__badge">Abschluss · Zertifikat</span>
+          <h3 style="text-align:center;">Systemische:r Online‑Expert:in</h3>
+          <p style="text-align:left;">Zertifiziert von coachingspace. Bei vollständigem Besuch aller Module. Modulweise Teilnahmebestätigung möglich.</p>
           <div style="margin-top:auto;padding-top:1rem;">
             <a href="#register" class="btn btn--outline" style="width:100%;justify-content:center;display:flex;">Mehr erfahren</a>
           </div>
@@ -769,10 +1126,13 @@
           <span class="referent-card__role">Referent · ISH Akademie</span>
           <a href="https://lambeck-consulting.de/" target="_blank" rel="noopener" class="referent-card__link">lambeck-consulting.de →</a>
           <p class="referent-card__bio">
-            KI‑Experte in KMUs, Ideengeber und Geschäftsführer von coachingspace. Als Lehrender der früheren Zusatzqualifizierung Online‑Supervision hat er über mehrere Jahre Supervisor:innen und Coaches in der Gestaltung digitaler Beratungsprozesse begleitet.
+            Systemischer Supervisor und Lehrsupervisor (SG/DGSF) mit langjähriger Praxis in der Ausbildung und Begleitung von Supervisor:innen und Coaches. Als Leitung der früheren Zusatzqualifizierung „Online‑Supervision" hat er seit 2020 <strong>sechs Kohorten mit über 100 Teilnehmer:innen</strong> begleitet (ehemals unter <a href="https://super.vision/" target="_blank" rel="noopener" style="color:var(--ish-teal);text-decoration:none;font-weight:600;">super.vision</a>) – und so die Gestaltung digitaler Beratungsprozesse fachlich mit aufgebaut und weiterentwickelt.
           </p>
           <p class="referent-card__bio">
-            Die vorliegende Weiterbildung führt diese Erfahrungen weiter und verbindet sie mit aktuellen Entwicklungen rund um digitale Beratung und künstliche Intelligenz.
+            Seine Arbeit verbindet systemische Haltung, didaktische Sorgfalt und die kritisch‑reflektierte Nutzung digitaler Werkzeuge. Die vorliegende Weiterbildung führt diese Erfahrungen weiter und verbindet sie mit aktuellen Entwicklungen rund um Online‑Supervision und künstliche Intelligenz in der Beratung.
+          </p>
+          <p class="referent-card__bio" style="font-size:.85rem;color:#7a8a9a;">
+            Gründer und Geschäftsführer von coachingspace sowie Ideengeber im Kontext digitaler Beratungsarchitekturen – mit Erfahrung in der Beratung von Bildungseinrichtungen und KMUs.
           </p>
           <p class="referent-card__note">
             Alle Module können bei coachingspace für die Qualifizierung „Systemische:r Online‑Expert:in" anerkannt werden.
@@ -806,6 +1166,10 @@
               </div>
             </div>
             <div class="referent-refs-block">
+              <span class="referent-refs-block__label">Zentrale Publikation</span>
+              <p style="font-size:.82rem;color:#4a5a6a;line-height:1.55;margin:.25rem 0 .5rem;">Lambeck, B., Mundelsee, L., Sawatzki, D. &amp; Hoffmann, A. (2021): <em>50 Coachingkarten Online‑Coaching – Das Methodenset für digital gestützte Beratung.</em> Weinheim: Beltz. <a href="https://www.beltz.de/fachmedien/training-coaching-beratung/50-coachingkarten-online-coaching/BEL530026" target="_blank" rel="noopener" style="color:var(--ish-teal);text-decoration:none;font-weight:600;white-space:nowrap;">→ beltz.de</a></p>
+            </div>
+            <div class="referent-refs-block">
               <span class="referent-refs-block__label">Medien &amp; Verlag</span>
               <div class="referent-refs-block__chips">
                 <span class="ref-chip">COACHINGBANDE Podcast</span>
@@ -820,13 +1184,50 @@
     </div>
   </section>
 
+  <!-- WISSENSCHAFTLICHER KONTEXT -->
+  <section class="lit-section" id="literatur">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Wissenschaftlicher Kontext</span>
+        <h2>Fachliche Verankerung.</h2>
+        <p class="section-intro">Die Weiterbildung speist sich aus aktueller Fachliteratur zu Supervision, systemischer Beratung und digitaler Kommunikation.</p>
+      </div>
+
+      <div class="lit-grid">
+        <div class="lit-item"><strong>Schreyögg, A. (2010):</strong> Supervision. Ein integratives Modell. Wiesbaden: VS Verlag. – Methode, Format, Setting.</div>
+        <div class="lit-item"><strong>Daft, R. L. &amp; Lengel, R. H. (1986):</strong> Organizational Information Requirements, Media Richness and Structural Design. – Selektivität digitaler Medien.</div>
+        <div class="lit-item"><strong>Hawkins, P. &amp; Shohet, R. (2012):</strong> Supervision in the Helping Professions. Maidenhead: Open University Press. – Blended Supervision.</div>
+        <div class="lit-item"><strong>Suler, J. (2004):</strong> The Online Disinhibition Effect. CyberPsychology &amp; Behavior, 7(3). – Psychologische Dynamik digitaler Kommunikation.</div>
+        <div class="lit-item"><strong>Luhmann, N. (1984):</strong> Soziale Systeme. Frankfurt: Suhrkamp. – Systemtheoretische Grundlage.</div>
+        <div class="lit-item"><strong>Watzlawick, P., Beavin, J. &amp; Jackson, D. (1969):</strong> Menschliche Kommunikation. Bern: Huber. – Axiome der Kommunikation.</div>
+        <div class="lit-item"><strong>Schön, D. A. (1983):</strong> The Reflective Practitioner. New York: Basic Books. – Reflexion als Professionsmerkmal.</div>
+        <div class="lit-item"><strong>Mundelsee, L. &amp; Sawatzki, A. (i. V.):</strong> Stufenmodell videobasierter Beratungsmethoden. – Systematik digitaler Supervisionsformate.</div>
+        <div class="lit-item" style="grid-column: 1 / -1; border-left: 3px solid var(--ish-teal);"><strong>Lambeck, B., Mundelsee, L., Sawatzki, D. &amp; Hoffmann, A. (2021):</strong> 50 Coachingkarten Online‑Coaching – Das Methodenset für digital gestützte Beratung. Weinheim: Beltz. – Praxis‑Methodenset des Dozenten. <a href="https://www.beltz.de/fachmedien/training-coaching-beratung/50-coachingkarten-online-coaching/BEL530026" target="_blank" rel="noopener" style="color:var(--ish-teal);text-decoration:none;font-weight:600;">→ beltz.de</a></div>
+      </div>
+
+      <p class="lit-note">Vollständige Literaturliste und Studienheft „Online‑Supervision als professionelles Setting" im Rahmen der Weiterbildung.</p>
+    </div>
+  </section>
+
   <!-- ANMELDUNG -->
   <section class="interest-section" id="register">
     <div class="container">
       <div class="interest-inner">
-        <span class="section-tag" style="color:rgba(255,255,255,.5);">Jetzt anmelden</span>
+        <span class="section-tag" style="color:rgba(255,255,255,.5);">Jetzt anmelden oder anfragen</span>
         <h2>Sichern Sie Ihren Platz.</h2>
-        <p>Melden Sie sich direkt für den nächsten Durchgang an – modular oder als Gesamtpaket. Wir bestätigen Ihre Anmeldung innerhalb von 2 Werktagen.</p>
+        <p>Buchen Sie direkt verbindlich – oder stellen Sie eine unverbindliche Anfrage. Sie können auch erst ein persönliches Gespräch mit dem Referenten vereinbaren.</p>
+
+        <!-- Termin-Option -->
+        <div class="termin-cta">
+          <div class="termin-cta__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="termin-cta__text">
+            <strong>Lieber erst sprechen?</strong>
+            <span>Buchen Sie einen kostenfreien, unverbindlichen Termin mit Benjamin Lambeck – wir beantworten Ihre Fragen persönlich.</span>
+          </div>
+          <a href="https://sites.coachingspace.net/meetings/benjamin-lambeck" target="_blank" rel="noopener" class="termin-cta__btn">Termin buchen →</a>
+        </div>
 
         <form class="register__form" action="https://formspree.io/f/xeevaybd" method="POST" novalidate style="text-align:left;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:2rem;">
           <h3 style="color:#fff;margin:0 0 .25rem;">Anmeldung &amp; Anfrage</h3>
@@ -847,7 +1248,7 @@
             <input type="email" id="reg-email" name="email" placeholder="ihre@email.de" required />
           </div>
           <div class="form-group">
-            <label for="reg-buchung-sel">Ich möchte buchen *</label>
+            <label for="reg-buchung-sel">Ich interessiere mich für *</label>
             <select id="reg-buchung-sel" name="buchung_sel" required>
               <option value="">Bitte wählen...</option>
               <option value="Gesamtpaket – alle 4 Module (1.900 €)">Gesamtpaket – alle 4 Module (1.900 €)</option>
@@ -876,12 +1277,22 @@
           </div>
           <div class="form-group form-group--check">
             <label class="checkbox-label">
+              <input type="checkbox" name="ratenzahlung" value="ja" />
+              <span>Ich interessiere mich für eine <strong style="color:#fff;">Ratenzahlung</strong> – bitte informieren Sie mich dazu.</span>
+            </label>
+          </div>
+          <div class="form-group form-group--check">
+            <label class="checkbox-label">
               <input type="checkbox" name="privacy" required />
               <span>Ich habe die <a href="#" style="color:rgba(255,255,255,.6);">Datenschutzerklärung</a> gelesen und stimme zu. *</span>
             </label>
           </div>
-          <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">Jetzt verbindlich anmelden →</button>
-          <p style="font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.75rem;text-align:center;">* Pflichtfelder · Umsatzsteuerbefreit · Wir melden uns innerhalb von 2 Werktagen.</p>
+
+          <div class="form-cta-row">
+            <button type="submit" name="intent" value="buchung" class="btn btn--primary">Jetzt verbindlich buchen →</button>
+            <button type="submit" name="intent" value="anfrage" class="btn btn--ghost">Unverbindliche Anfrage stellen</button>
+          </div>
+          <p style="font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.75rem;text-align:center;">* Pflichtfelder · Umsatzsteuerbefreit · Bei Buchung erhalten Sie umgehend eine Bestätigung, bei Anfragen melden wir uns innerhalb von 2 Werktagen.</p>
         </form>
 
       </div>

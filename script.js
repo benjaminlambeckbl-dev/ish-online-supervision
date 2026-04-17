@@ -37,8 +37,19 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 document.querySelector('.register__form')?.addEventListener('submit', async e => {
   e.preventDefault();
   const form = e.target;
-  const btn  = form.querySelector('button[type="submit"]');
+  const submitter = e.submitter;
+  const intent = submitter?.value || '';
+  const btn = submitter || form.querySelector('button[type="submit"]');
   const originalText = btn.textContent;
+
+  const successText = intent === 'buchung'
+    ? '✓ Herzlichen Dank für Ihre Buchung – Sie erhalten in Kürze alle Infos.'
+    : intent === 'anfrage'
+      ? '✓ Danke – wir bearbeiten Ihre Anfrage und melden uns in Kürze.'
+      : '✓ Wir melden uns in Kürze – danke für Ihr Interesse!';
+
+  const formData = new FormData(form);
+  if (submitter && submitter.name) formData.set(submitter.name, submitter.value);
 
   btn.textContent = 'Wird gesendet …';
   btn.disabled = true;
@@ -46,12 +57,12 @@ document.querySelector('.register__form')?.addEventListener('submit', async e =>
   try {
     const res = await fetch(form.action, {
       method: 'POST',
-      body: new FormData(form),
+      body: formData,
       headers: { Accept: 'application/json' }
     });
 
     if (res.ok) {
-      btn.textContent = '✓ Wir melden uns in Kürze – danke für Ihr Interesse!';
+      btn.textContent = successText;
       btn.style.background = '#00364a';
       form.reset();
       const labelEl = document.getElementById('buchung-selected-label') || document.getElementById('sv-buchung-label');
