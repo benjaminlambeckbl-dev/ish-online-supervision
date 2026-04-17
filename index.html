@@ -376,7 +376,7 @@
     .sv-termine__cta { margin-top: 1.25rem; text-align: center; }
 
     /* ── Buchungskarten ───────────────────────────────── */
-    .sv-buchung-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+    .sv-buchung-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.5rem; margin-bottom: 2.5rem; max-width: 880px; margin-left: auto; margin-right: auto; }
     @media (max-width: 768px) { .sv-buchung-grid { grid-template-columns: 1fr; } }
     .sv-buchung-card { background: #fff; border: 1.5px solid #e3eaf0; border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; gap: .6rem; }
     .sv-buchung-card--highlight { border-color: var(--ish-teal); box-shadow: 0 4px 20px rgba(0,170,162,.12); }
@@ -407,17 +407,87 @@
     }
     .sv-buchung-card__deadline strong { color: var(--ish-dark); }
 
-    @media (max-width: 640px) { .vertiefung-grid { grid-template-columns: 1fr !important; } }
-
     /* ── Rahmen-Block (Für wen geeignet / Voraussetzungen) ── */
-    .rahmen-section { padding: 4rem 0 3rem; background: #fff; }
+    .rahmen-section { padding: 4.5rem 0 4rem; background: var(--ish-gray-50); }
     .rahmen-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
     @media (max-width: 900px) { .rahmen-grid { grid-template-columns: 1fr; } }
-    .rahmen-card { background: #f4f8fa; border: 1px solid #e3eaf0; border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; gap: .65rem; }
-    .rahmen-card__icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(0,170,162,.12); color: var(--ish-teal); display: flex; align-items: center; justify-content: center; margin-bottom: .35rem; }
-    .rahmen-card__siegel { width: 130px; height: 130px; object-fit: contain; margin: -.25rem auto .5rem; display: block; }
-    .rahmen-card--siegel { text-align: center; background: #fff; border: 1.5px solid var(--ish-teal); box-shadow: 0 4px 20px rgba(0,170,162,.1); }
-    .rahmen-card--siegel ul { align-self: stretch; }
+    .rahmen-card { background: #fff; border: 1px solid #e3eaf0; border-radius: 16px; padding: 1.75rem 1.75rem 2rem; display: flex; flex-direction: column; gap: .65rem; height: 100%; box-shadow: 0 2px 10px rgba(0,60,90,.04); }
+    .rahmen-card__icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(0,170,162,.12); color: var(--ish-teal); display: flex; align-items: center; justify-content: center; margin-bottom: .6rem; }
+    .rahmen-card__siegel { width: 72px; height: 72px; object-fit: contain; margin: 0 0 .6rem; display: block; }
+    .rahmen-card--siegel { background: #fff; border: 1.5px solid var(--ish-teal); box-shadow: 0 4px 20px rgba(0,170,162,.08); }
+    .rahmen-card__zertifikat-detail {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid #e3eaf0;
+      font-size: .8rem;
+      color: #6b7d8e;
+      line-height: 1.55;
+    }
+    .rahmen-card__zertifikat-detail strong { color: var(--ish-dark); font-weight: 700; display: block; margin-bottom: .2rem; }
+
+    /* Vertiefungs-Box */
+    .vertiefung-box {
+      margin-top: 2.5rem;
+      background: #fff;
+      border-radius: 18px;
+      padding: 2rem 2.25rem;
+      border: 1px solid #e3eaf0;
+    }
+    .vertiefung-box__header {
+      display: flex; align-items: center; gap: .75rem;
+      margin-bottom: 1rem;
+    }
+    .vertiefung-box__header svg { stroke: var(--ish-teal); flex-shrink: 0; }
+    .vertiefung-box__header span {
+      font-size: .68rem; font-weight: 800;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--ish-teal);
+    }
+    .vertiefung-box > h3 {
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--ish-dark); margin: 0 0 .75rem;
+    }
+    .vertiefung-box > p {
+      font-size: .9rem; color: #4a5a6a;
+      line-height: 1.65; margin: 0 0 1.25rem;
+    }
+    .vertiefung-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+    }
+    @media (max-width: 640px) { .vertiefung-grid { grid-template-columns: 1fr; } }
+    .vertiefung-item {
+      background: var(--ish-gray-50);
+      border-radius: 12px;
+      padding: 1.25rem 1.4rem;
+      border: 1px solid #e3eaf0;
+    }
+    .vertiefung-item__num {
+      display: flex; align-items: baseline; gap: .5rem;
+      margin-bottom: .4rem;
+    }
+    .vertiefung-item__num span {
+      font-family: var(--font-head);
+      font-size: 1.8rem; font-weight: 900;
+      color: var(--ish-teal); line-height: 1;
+    }
+    .vertiefung-item__num em {
+      font-style: normal;
+      font-size: .72rem; font-weight: 700;
+      color: #8a9aaa;
+      letter-spacing: .04em;
+    }
+    .vertiefung-item strong {
+      display: block; font-size: .92rem;
+      color: var(--ish-dark); margin-bottom: .35rem;
+    }
+    .vertiefung-item p {
+      font-size: .83rem; color: #5a6e7e;
+      line-height: 1.55; margin: 0;
+    }
+    .vertiefung-box__note {
+      font-size: .78rem; color: #7a8fa0;
+      margin: 1rem 0 0 !important; font-style: italic;
+    }
     .rahmen-card__label { font-size: .68rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: var(--ish-teal); }
     .rahmen-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--ish-dark); margin: 0; line-height: 1.35; }
     .rahmen-card p { font-size: .88rem; color: #4a5a6a; line-height: 1.6; margin: 0; }
@@ -543,8 +613,9 @@
       <a href="#" class="nav__logo" aria-label="ISH Akademie"></a>
       <nav class="nav__links" aria-label="Seitennavigation" style="margin-left:auto;margin-right:auto;">
         <a href="#fragen">Zentrale Fragen</a>
-        <a href="#dimensionen">Gestaltungsdimensionen</a>
+        <a href="#dimensionen">Dimensionen</a>
         <a href="#module">Module</a>
+        <a href="#rahmen">Zielgruppe</a>
         <a href="#preise">Preise</a>
         <a href="#referent">Dozent</a>
       </nav>
@@ -643,91 +714,6 @@
           <p>Welche expliziten Vereinbarungen zu Technik, Datenschutz, Präsenz und Umgang mit Störungen braucht es, damit Online‑Supervision zu einem professionell haltenden Raum wird?</p>
           <span class="frage-card__mark" aria-hidden="true">?</span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RAHMEN · FÜR WEN GEEIGNET -->
-  <section class="rahmen-section" id="rahmen">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Rahmen &amp; Zielgruppe</span>
-        <h2>Für wen ist diese Weiterbildung geeignet?</h2>
-        <p class="section-intro">Die Weiterbildung richtet sich an erfahrene Beraterinnen und Berater, die Online‑Supervision als eigenständiges Setting professionell gestalten möchten.</p>
-      </div>
-
-      <div class="rahmen-grid">
-        <div class="rahmen-card">
-          <div class="rahmen-card__icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <span class="rahmen-card__label">Voraussetzungen</span>
-          <h3>Fachliche Grundlage</h3>
-          <p>Abgeschlossene grundständige Coaching‑ oder Supervisionsausbildung oder vergleichbare beraterische Qualifikation.</p>
-          <ul>
-            <li>Erfahrung in Einzel- oder Gruppenberatung</li>
-            <li>Interesse an digitaler Beratungspraxis</li>
-          </ul>
-        </div>
-
-        <div class="rahmen-card">
-          <div class="rahmen-card__icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/></svg>
-          </div>
-          <span class="rahmen-card__label">Gruppengröße</span>
-          <h3>Max. 16 Teilnehmende</h3>
-          <p>Kleine Lerngruppe für intensive Reflexion, persönlichen Austausch und ausreichend Raum für eigene Praxisfälle.</p>
-          <ul>
-            <li>Didaktisch betreuter Lernraum</li>
-            <li>Peer‑Reflexion in Kleingruppen</li>
-          </ul>
-        </div>
-
-        <div class="rahmen-card rahmen-card--siegel">
-          <img src="siegel-online-expertin.svg" alt="Siegel Systemische:r Online-Expert:in – zertifiziert von coachingspace" class="rahmen-card__siegel" />
-          <span class="rahmen-card__label">Abschluss · Zertifikat</span>
-          <h3>Systemische:r Online‑Expert:in</h3>
-          <p>Bei vollständigem Besuch aller Module erhalten Sie das Zertifikat <strong>„Systemische:r Online‑Expert:in"</strong> – zertifiziert von coachingspace.</p>
-          <ul>
-            <li>Anerkannt für weiterführende Qualifizierungen</li>
-            <li>Modulweise Teilnahmebestätigung möglich</li>
-          </ul>
-          <p style="font-size:.78rem;color:#6b7d8e;line-height:1.5;margin:.5rem 0 0;padding-top:.75rem;border-top:1px solid #e3eaf0;text-align:left;">
-            <strong style="color:var(--ish-dark);">Auf dem Zertifikat:</strong><br/>
-            80 WE · 4 Module · Benjamin Lambeck als Leitung · Aussteller: coachingspace<br/>
-            Inhaltliche Schwerpunkte entlang der sechs Gestaltungsdimensionen.
-          </p>
-        </div>
-      </div>
-
-      <!-- Freiwillige Vertiefung -->
-      <div style="margin-top:2.5rem;background:#f4f8fa;border-radius:18px;padding:2rem 2.25rem;border:1px solid #e3eaf0;">
-        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="stroke:var(--ish-teal);flex-shrink:0;"><path d="M12 22s-8-4.5-8-11.8a8 8 0 0 1 16 0c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span style="font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ish-teal);">Freiwillige Vertiefung · zwischen den Modulen</span>
-        </div>
-        <h3 style="font-size:1.15rem;font-weight:700;color:var(--ish-dark);margin:0 0 .75rem;">Intervision &amp; Selbstlernen – empfohlen ab zwei gebuchten Modulen</h3>
-        <p style="font-size:.9rem;color:#4a5a6a;line-height:1.65;margin:0 0 1.25rem;">Zwischen den Modulen steht ein multimedialer Lernraum zur Verfügung – auf freiwilliger Basis, als Angebot zur Vertiefung und zum Transfer in die eigene Praxis.</p>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;" class="vertiefung-grid">
-          <div style="background:#fff;border-radius:12px;padding:1.25rem 1.4rem;border:1px solid #e3eaf0;">
-            <div style="display:flex;align-items:baseline;gap:.5rem;margin-bottom:.4rem;">
-              <span style="font-family:var(--font-head);font-size:1.8rem;font-weight:900;color:var(--ish-teal);line-height:1;">35</span>
-              <span style="font-size:.75rem;font-weight:700;color:#8a9aaa;">LE empfohlen</span>
-            </div>
-            <strong style="display:block;font-size:.92rem;color:var(--ish-dark);margin-bottom:.35rem;">Peer‑Intervision</strong>
-            <p style="font-size:.83rem;color:#5a6e7e;line-height:1.55;margin:0;">Kollegiale Fallarbeit in Kleingruppen zwischen den Modulen. Selbstorganisiert, mit Leitfäden aus der Weiterbildung.</p>
-          </div>
-          <div style="background:#fff;border-radius:12px;padding:1.25rem 1.4rem;border:1px solid #e3eaf0;">
-            <div style="display:flex;align-items:baseline;gap:.5rem;margin-bottom:.4rem;">
-              <span style="font-family:var(--font-head);font-size:1.8rem;font-weight:900;color:var(--ish-teal);line-height:1;">~30</span>
-              <span style="font-size:.75rem;font-weight:700;color:#8a9aaa;">LE Selbstlernen</span>
-            </div>
-            <strong style="display:block;font-size:.92rem;color:var(--ish-dark);margin-bottom:.35rem;">Multimediales Material</strong>
-            <p style="font-size:.83rem;color:#5a6e7e;line-height:1.55;margin:0;">Texte, Videos, Impulsfragen und Übungen zur individuellen Vertiefung – eigenständig und im eigenen Tempo bearbeitbar.</p>
-          </div>
-        </div>
-        <p style="font-size:.78rem;color:#7a8fa0;margin:1rem 0 0;font-style:italic;">Hinweis: Dieses Angebot ist freiwillig und wird bei Buchung von zwei oder mehr Modulen bereitgestellt.</p>
       </div>
     </div>
   </section>
@@ -1091,6 +1077,92 @@
     </div>
   </section>
 
+  <!-- RAHMEN · FÜR WEN GEEIGNET -->
+  <section class="rahmen-section" id="rahmen">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Rahmen &amp; Zielgruppe</span>
+        <h2>Für wen ist diese Qualifizierung geeignet?</h2>
+        <p class="section-intro">Die Qualifizierung richtet sich an erfahrene Beraterinnen und Berater, die Online‑Supervision als eigenständiges Setting professionell gestalten möchten.</p>
+      </div>
+
+      <div class="rahmen-grid">
+        <div class="rahmen-card">
+          <div class="rahmen-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <span class="rahmen-card__label">Voraussetzungen</span>
+          <h3>Fachliche Grundlage</h3>
+          <p>Abgeschlossene grundständige Coaching‑ oder Supervisionsausbildung oder vergleichbare beraterische Qualifikation.</p>
+          <ul>
+            <li>Erfahrung in Einzel-, Team- oder Gruppenberatung</li>
+            <li>Interesse an digitaler Beratungspraxis</li>
+            <li>Bereitschaft zur Arbeit an eigenen Praxisfällen</li>
+            <li>Offenheit für systemische Grundhaltung</li>
+          </ul>
+        </div>
+
+        <div class="rahmen-card">
+          <div class="rahmen-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          </div>
+          <span class="rahmen-card__label">Format &amp; Gruppe</span>
+          <h3>Max. 16 Teilnehmende</h3>
+          <p>Kleine Lerngruppe für intensive Reflexion, persönlichen Austausch und ausreichend Raum für eigene Praxisfälle.</p>
+          <ul>
+            <li>Didaktisch betreuter Lernraum</li>
+            <li>Peer‑Reflexion in Kleingruppen</li>
+            <li>Vollständig online über coachingspace</li>
+            <li>Fr 16:30–18:30 · Sa 09:30–17:00</li>
+          </ul>
+        </div>
+
+        <div class="rahmen-card rahmen-card--siegel">
+          <img src="siegel-online-expertin.svg" alt="Siegel Systemische:r Online-Expert:in – zertifiziert von coachingspace" class="rahmen-card__siegel" />
+          <span class="rahmen-card__label">Abschluss · Zertifikat</span>
+          <h3>Systemische:r Online‑Expert:in</h3>
+          <p>Bei vollständigem Besuch aller Module erhalten Sie das Zertifikat – zertifiziert von coachingspace.</p>
+          <ul>
+            <li>Anerkannt für weiterführende Qualifizierungen</li>
+            <li>Modulweise Teilnahmebestätigung möglich</li>
+          </ul>
+          <div class="rahmen-card__zertifikat-detail">
+            <strong>Auf dem Zertifikat:</strong>
+            80 WE · 4 Module · Benjamin Lambeck als Leitung · Aussteller coachingspace. Inhaltliche Schwerpunkte entlang der sechs Gestaltungsdimensionen.
+          </div>
+        </div>
+      </div>
+
+      <!-- Freiwillige Vertiefung -->
+      <div class="vertiefung-box">
+        <div class="vertiefung-box__header">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8a8 8 0 0 1 16 0c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Freiwillige Vertiefung · zwischen den Modulen</span>
+        </div>
+        <h3>Intervision &amp; Selbstlernen – empfohlen ab zwei gebuchten Modulen</h3>
+        <p>Zwischen den Modulen steht ein multimedialer Lernraum zur Verfügung – auf freiwilliger Basis, als Angebot zur Vertiefung und zum Transfer in die eigene Praxis.</p>
+
+        <div class="vertiefung-grid">
+          <div class="vertiefung-item">
+            <div class="vertiefung-item__num">
+              <span>35</span><em>LE empfohlen</em>
+            </div>
+            <strong>Peer‑Intervision</strong>
+            <p>Kollegiale Fallarbeit in Kleingruppen zwischen den Modulen. Selbstorganisiert, mit Leitfäden aus der Weiterbildung.</p>
+          </div>
+          <div class="vertiefung-item">
+            <div class="vertiefung-item__num">
+              <span>~30</span><em>LE Selbstlernen</em>
+            </div>
+            <strong>Multimediales Material</strong>
+            <p>Texte, Videos, Impulsfragen und Übungen zur individuellen Vertiefung – eigenständig und im eigenen Tempo bearbeitbar.</p>
+          </div>
+        </div>
+        <p class="vertiefung-box__note">Hinweis: Dieses Angebot ist freiwillig und wird bei Buchung von zwei oder mehr Modulen bereitgestellt.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- PREISE & ANMELDUNG -->
   <section class="preise-section" id="preise">
     <div class="container">
@@ -1122,16 +1194,11 @@
           <button class="btn btn--primary sv-buchung-card__btn" data-option="Gesamtpaket Frühbucher – 1.990 €" style="width:100%;justify-content:center;margin-top:.5rem;">Frühbucher buchen</button>
         </div>
 
-        <div class="sv-buchung-card" style="background:#f4f8fa;text-align:center;">
-          <img src="siegel-online-expertin.svg" alt="Siegel Systemische:r Online-Expert:in" style="width:110px;height:110px;object-fit:contain;margin:.25rem auto .5rem;" />
-          <span class="sv-buchung-card__badge">Abschluss · Zertifikat</span>
-          <h3 style="text-align:center;">Systemische:r Online‑Expert:in</h3>
-          <p style="text-align:left;">Zertifiziert von coachingspace. Bei vollständigem Besuch aller Module. Modulweise Teilnahmebestätigung möglich.</p>
-          <div style="margin-top:auto;padding-top:1rem;">
-            <a href="#register" class="btn btn--outline" style="width:100%;justify-content:center;display:flex;">Mehr erfahren</a>
-          </div>
-        </div>
       </div>
+
+      <p style="text-align:center;font-size:.85rem;color:#6b7d8e;margin:0;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.6;">
+        Ratenzahlung möglich · Umsatzsteuerbefreit · <a href="#register" style="color:var(--ish-teal);text-decoration:none;font-weight:600;">Zur Anmeldung →</a>
+      </p>
     </div>
   </section>
 
