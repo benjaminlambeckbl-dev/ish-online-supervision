@@ -249,14 +249,14 @@
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="#" class="nav__logo" aria-label="ISH Akademie"></a>
-      <a href="index.html" class="nav__back">← Alle Weiterbildungen</a>
+      <a href="#referent" class="nav__back">Dozent</a>
       <nav class="nav__links" aria-label="Seitennavigation">
         <a href="#fragen">Zentrale Fragen</a>
         <a href="#module">Module</a>
         <a href="#preise">Preise</a>
-        <a href="#register">Interesse melden</a>
+        <a href="#register">Jetzt anmelden</a>
       </nav>
-      <a href="#register" class="btn btn--primary nav__cta">Interesse melden</a>
+      <a href="#register" class="btn btn--primary nav__cta">Jetzt anmelden</a>
       <button class="nav__burger" aria-label="Menü" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -813,16 +813,6 @@
       function update(){ cta.classList.toggle('is-visible', hero.getBoundingClientRect().bottom < 0); }
       window.addEventListener('scroll', update, { passive: true });
     })();
-
-    // Accordion
-    document.querySelectorAll('.mod-accordion__trigger').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const panel = document.getElementById(btn.getAttribute('aria-controls'));
-        const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!isOpen));
-        panel.hidden = isOpen;
-      });
-    });
 
     // Buchungsbuttons → Formular vorausfüllen
     document.querySelectorAll('.sv-buchung-card__btn[data-option]').forEach(btn => {
