@@ -387,6 +387,25 @@
     .sv-buchung-card__price span { font-size: .78rem; font-weight: 400; color: #8a9aaa; }
     .sv-buchung-card__strike { font-size: .82rem; color: #a0aab4; text-decoration: line-through; margin-right: .4rem; font-weight: 400; }
     .sv-buchung-card__save { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .04em; color: #fff; background: var(--ish-teal); padding: .25rem .6rem; border-radius: 999px; margin-top: .35rem; }
+    .sv-buchung-card__fruehbucher {
+      display: inline-flex; align-items: center; gap: .35rem;
+      font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+      color: #b8860b; background: #fff4c7;
+      padding: .3rem .65rem; border-radius: 999px;
+      margin-bottom: .5rem;
+    }
+    .sv-buchung-card__fruehbucher::before { content: "★"; color: #e6a700; }
+    .sv-buchung-card__pricerow {
+      display: flex; align-items: baseline; gap: .75rem; flex-wrap: wrap;
+      font-family: var(--font-head); line-height: 1;
+    }
+    .sv-buchung-card__regular {
+      font-size: 1rem; color: #8a9aaa; text-decoration: line-through; font-weight: 500;
+    }
+    .sv-buchung-card__deadline {
+      font-size: .82rem; color: #5a6e7e; margin: .35rem 0 0; line-height: 1.5;
+    }
+    .sv-buchung-card__deadline strong { color: var(--ish-dark); }
 
     @media (max-width: 640px) { .vertiefung-grid { grid-template-columns: 1fr !important; } }
 
@@ -548,7 +567,7 @@
           <span class="badge badge--akademie">ISH Akademie</span>
           <span class="badge badge--outline">Aufbauende Qualifizierung</span>
           <span class="badge badge--outline">4 Module · Online</span>
-          <span class="badge badge--outline">Steuerbefreit</span>
+          <span class="badge" style="background:#fff4c7;color:#b8860b;border:none;font-weight:800;">★ Frühbucher bis 14.08.2026</span>
         </div>
         <h1 class="hero__headline">
           Gestaltungskunst<br />
@@ -1078,7 +1097,7 @@
       <div class="section-header">
         <span class="section-tag">Anmeldung &amp; Preise</span>
         <h2>Modular oder als Gesamtpaket.</h2>
-        <p class="section-intro">Alle Module können einzeln gebucht werden. Das Gesamtpaket ist günstiger als vier Einzelmodule.</p>
+        <p class="section-intro">Alle Module können einzeln gebucht werden. Für das Gesamtpaket gilt derzeit ein <strong>Frühbucherpreis bis 14.08.2026</strong>.</p>
       </div>
 
       <div class="sv-buchung-grid">
@@ -1091,12 +1110,16 @@
         </div>
 
         <div class="sv-buchung-card sv-buchung-card--highlight">
-          <span class="sv-buchung-card__badge">Gesamtpaket</span>
-          <h3>Alle 4 Module</h3>
-          <p>Die vollständige Qualifizierung in einem Paket – alle vier Module, vollständig online. Inklusive Zertifikat zum/zur Systemischen Online‑Expert:in by coachingspace.</p>
-          <div class="sv-buchung-card__price">1.900 <span>€ umsatzsteuerbefreit</span></div>
-          <p style="font-size:.82rem;color:#5a6e7e;margin:.35rem 0 0;line-height:1.5;">1.900 € statt 4 × 690 € – <strong style="color:var(--ish-teal);">Modul 4 inklusive.</strong></p>
-          <button class="btn btn--primary sv-buchung-card__btn" data-option="Gesamtpaket (alle 4 Module)" style="width:100%;justify-content:center;margin-top:.5rem;">Gesamtpaket buchen</button>
+          <span class="sv-buchung-card__fruehbucher">Frühbucher bis 14.08.2026</span>
+          <span class="sv-buchung-card__badge">Gesamtpaket · alle 4 Module</span>
+          <h3>Komplette Qualifizierung</h3>
+          <p>Die vollständige Qualifizierung in einem Paket – alle vier Module, vollständig online. Inklusive Zertifikat Systemische:r Online‑Expert:in by coachingspace.</p>
+          <div class="sv-buchung-card__pricerow">
+            <span class="sv-buchung-card__regular">2.490 €</span>
+            <span class="sv-buchung-card__price" style="margin:0;">1.990 <span>€ umsatzsteuerbefreit</span></span>
+          </div>
+          <p class="sv-buchung-card__deadline">Frühbucherpreis bis <strong>14.08.2026</strong> · danach regulär <strong>2.490 €</strong></p>
+          <button class="btn btn--primary sv-buchung-card__btn" data-option="Gesamtpaket Frühbucher – 1.990 €" style="width:100%;justify-content:center;margin-top:.5rem;">Frühbucher buchen</button>
         </div>
 
         <div class="sv-buchung-card" style="background:#f4f8fa;text-align:center;">
@@ -1251,7 +1274,8 @@
             <label for="reg-buchung-sel">Ich interessiere mich für *</label>
             <select id="reg-buchung-sel" name="buchung_sel" required>
               <option value="">Bitte wählen...</option>
-              <option value="Gesamtpaket – alle 4 Module (1.900 €)">Gesamtpaket – alle 4 Module (1.900 €)</option>
+              <option value="Gesamtpaket Frühbucher – 1.990 € (bis 14.08.2026)">Gesamtpaket Frühbucher – 1.990 € (bis 14.08.2026)</option>
+              <option value="Gesamtpaket regulär – 2.490 €">Gesamtpaket regulär – 2.490 €</option>
               <option value="Modul 1 – Dynamiken virtueller Begegnungen (690 €)">Modul 1 – Dynamiken virtueller Begegnungen (690 €)</option>
               <option value="Modul 2 – Möglichkeiten digitaler Supervisionsräume (690 €)">Modul 2 – Möglichkeiten digitaler Supervisionsräume (690 €)</option>
               <option value="Modul 3 – KI als Ressource im Beratungsprozess (690 €)">Modul 3 – KI als Ressource im Beratungsprozess (690 €)</option>
